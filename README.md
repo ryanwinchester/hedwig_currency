@@ -1,19 +1,27 @@
-# HedwigCurrency
+# Hedwig Currency Conversion Responder
 
-**TODO: Add description**
+[![Hex.pm](https://img.shields.io/hexpm/v/hedwig_currency.svg)](https://hex.pm/packages/hedwig_currency)
+ [![Hex.pm](https://img.shields.io/hexpm/l/hedwig_currency.svg)](https://hex.pm/packages/hedwig_currency)
+ [![Hex.pm](https://img.shields.io/hexpm/dt/hedwig_currency.svg)](https://hex.pm/packages/hedwig_currency)
+ [![Build Status](https://travis-ci.org/ryanwinchester/hedwig_currency.svg?branch=master)](https://travis-ci.org/ryanwinchester/hedwig_currency)
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `hedwig_currency` to your list of dependencies in `mix.exs`:
+Add to the deps in `mix.exs`
 
 ```elixir
 def deps do
-  [{:hedwig_currency, "~> 0.1.0"}]
+  [
+    {:hedwig_currency, "~> 0.1.0"},
+  ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/hedwig_currency](https://hexdocs.pm/hedwig_currency).
+Add the responder to your `:responders` list in your bot config, `config/config.exs`
 
+```elixir
+config :my_robot, MyApp.MyRobot,
+  responders: [
+    {Hedwig.Responders.Currency, []},
+  ]
+```
