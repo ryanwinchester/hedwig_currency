@@ -9,6 +9,10 @@ defmodule HedwigCurrency.Mixfile do
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),
+      description: description(),
+      package: package(),
+      source_url: "https://github.com/ryanwinchester/hedwig_currency",
+      name: "Hedwig Currency",
     ]
   end
 
@@ -34,6 +38,22 @@ defmodule HedwigCurrency.Mixfile do
       {:hedwig, "~> 1.0"},
       {:httpoison, "~> 0.11.2"},
       {:decimal, "~> 1.4"},
+      {:ex_doc, ">= 0.0.0", only: :dev},
+    ]
+  end
+
+  defp description do
+    """
+    Hedwig Currency Conversion Responder
+    """
+  end
+
+  defp package do
+    [
+      name: :hedwig_currency,
+      maintainers: ["Ryan Winchester"],
+      licenses: ["Apache 2.0"],
+      links: %{"GitHub" => "https://github.com/ryanwinchester/hedwig_currency"},
     ]
   end
 end
