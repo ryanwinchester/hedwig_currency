@@ -5,7 +5,7 @@ defmodule Hedwig.Responders.CurrencyTest do
 
   test "responds with currency conversion", %{adapter: adapter, msg: msg} do
     send adapter, {:message, %{msg | text: "alfred convert 10 USD to CAD"}}
-    assert_receive {:message, %{text: text}}
+    assert_receive {:message, %{text: text}}, 1000
     assert String.contains?(text, "10.00 USD is")
   end
 end
