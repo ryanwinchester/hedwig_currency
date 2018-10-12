@@ -30,7 +30,7 @@ defmodule Hedwig.Responders.Currency do
   # Fetch the exchange rates XML
   @spec fetch_rates(String.t, String.t) :: {Decimal.t, Decimal.t} | :error
   defp fetch_rates(from, to) do
-    url = "http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
+    url = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
     headers = [{"User-Agent", "Mozilla/5.0"}]
 
     case HTTPoison.get(url, headers) do
